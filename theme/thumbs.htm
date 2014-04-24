@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>SerialScroll</title>
+		<!-- <link href="style.css" rel="stylesheet"> -->
+		<script src="https://code.jquery.com/jquery.js"></script>
+		<script src="js/vendor/jquery.scrollTo.js"></script>
+		<script src="js/vendor/jquery.serialScroll.js"></script>
+		<style type="text/css">
+		#thumb-wrapper{
+			width: 400px;
+			overflow: hidden;
+		}
+		ul{
+			list-style: none;
+			padding:0;
+			margin: 0;
+			width: 1200px;
+		}
+		li.thumb {
+			float:left;
+			background-color: #000;
+			height: 100px;
+			width: 90px;
+			margin-right: 10px;
+		}
+		</style>
+		<script type="text/javascript">	
+			
+			jQuery(function( $ ){
+
+				 $('#thumb-wrapper').serialScroll({
+				 	items:'.thumb',
+				 	prev:'#thumb-btn-controls a.prev',
+				 	next:'#thumb-btn-controls a.next',
+				 	offset:0, //when scrolling to photo, stop 230 before reaching it (from the left)
+				 	start:0, //as we are centering it, start at the 2nd
+				 	duration:200,
+				 	force:true,
+				 	stop:true,
+				 	lock:false,
+				 	cycle:false, //don't pull back once you reach the end
+				 	//easing:'easeOutQuart', //use this easing equation for a funny effect
+				 	jump: true, //click on the images to scroll to them
+				 	onBefore:function( e, elem, $pane, $items, pos ){
+				 		console.log('start');
+					},
+					onAfter:function( elem ){
+						console.log('end');
+					}
+				 });
+			});
+		</script>
+	</head>
+	<body>
+
+		<article id="thumb-image-container">
+				
+			<div id="thumb-wrapper">
+				<ul id="thumb-images">
+					<li class="thumb"></li>
+					<li class="thumb"></li>
+					<li class="thumb"></li>
+					<li class="thumb"></li>
+					<li class="thumb"></li>
+					<li class="thumb"></li>
+					<li class="thumb"></li>
+					<li class="thumb"></li>
+					<li class="thumb"></li>
+					<li class="thumb"></li>
+					<li class="thumb"></li>
+					<li class="thumb"></li>
+				</ul>
+			</div>
+
+			<!-- <div id="thumb-btn-show"><a href="#">SHOW THUMBNAILS</a></div> -->
+			<div id="thumb-btn-controls" class="">
+				<a class="prev" href="">PREV</a><span> | </span><a class="myclose" href="#">HIDE THUMBNAILS</a><span> | </span><a class="next" href="" >NEXT</a>
+			</div>
+
+		</article>
+
+
+	
+	</body>
+</html>

@@ -204,6 +204,12 @@ HEADER
 		max-height: 100%;
 		padding-bottom: 5%;
 		}
+	#logo svg{
+		max-width: 100%;
+		margin-top: 2.5%;
+		max-height: 100%;
+		margin-bottom: 5%;
+		}
 
 /* =================================
 MAIN DROPDOWN MENU
@@ -216,7 +222,8 @@ nav{
 	float: left;
 	padding-left: 4%;
 	height: 100%;
-	width: 28.6%;
+	/*width: 28.6%;*/
+	width: 24em;
 	}
 
 nav ul ul {
@@ -654,6 +661,10 @@ TABLET SIZE FIXES
 @media screen and (max-width: 1280px){
 	#nav-wrapper{ min-height: 13%; }
 	#project-wrapper{ top: 13%; }
+}
+
+@media screen and (max-width: 1024px){
+#nav-container { font-size: 95%; }
 }
 
 /* ipad landscape */

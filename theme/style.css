@@ -321,6 +321,114 @@ nav ul ul {
 	background-position: 0 4px;
 	}
 
+
+
+/* =================================
+HOME ANIMATION
+===================================*/
+.edgeLoad-EDGE-1151878 { visibility:hidden; }
+
+#stage-wrapper{
+	position: absolute;
+	width: 100%;
+	height:100%;
+	overflow: hidden;
+	top:0;
+	left:0;
+	z-index:999;
+	background-color: #fff;
+	cursor: pointer;
+	}
+	#stage-container{
+		position: relative;
+		width: 2880px;
+		height: 1800px;
+		top: 45%;
+		left: 50%;
+		margin-left: -1440px;
+		margin-top: -900px;
+		-webkit-transform:rotate(360deg);
+		-webkit-font-smoothing: antialiased;
+		}
+		#stage-container svg{
+			shape-rendering:geometricPrecision;
+			}
+
+#home-wrapper{
+	position: absolute;
+	width: 100%;
+	height:85%;
+	overflow: hidden;
+	z-index:100;
+	top:15%;
+	left:0;
+	}
+	#home-container{
+		position: absolute;
+		width: 80%;
+		left: 10%;
+		height: 92%;
+		}
+		#home-container img{
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			-webkit-transform: translate(-50%, -50%);
+			-moz-transform: translate(-50%, -50%);
+			-ms-transform: translate(-50%, -50%);
+			-o-transform: translate(-50%, -50%);
+			transform: translate(-50%, -50%);
+			}
+			#home-container img.horz{ /* if window is horizontal match height */
+				max-height:91%;
+				width:auto;
+				}
+			#home-container img.vert{ /* if window is vertical match width */
+				max-width: 95%;
+				max-height:91%;
+				}
+#enter{
+	position: absolute;
+	left: 46.3%;
+	bottom: 25%;
+	-webkit-transform: translate(0%, -50%);
+	-moz-transform: translate(0%, -50%);
+	-ms-transform: translate(0%, -50%);
+	-o-transform: translate(0%, -50%);
+	transform: translate(0%, -50%);
+	}
+	#enter span{
+		font-family: "freight-sans-pro",sans-serif;
+		font-style: normal;
+		font-weight: 400;
+		font-size: 1em;
+		color: #939598;
+		}
+		#enter span::before{
+			line-height: 1em;
+			content: " ";
+			display:inline-block;
+			width: 7px;
+			height: 1em;
+			background-position: 0 2px;
+			background-image: url('images/arrow-home-left.gif');
+			margin-right: 0.6em;
+			background-repeat: no-repeat;
+			vertical-align: middle;
+			}
+		#enter span::after{
+			line-height: 1em;
+			content: " ";
+			display:inline-block;
+			width:7px;
+			height: 1em;
+			background-position: 0 2px;
+			background-image: url('images/arrow-home-right.gif');
+			margin-left: 0.6em;
+			background-repeat: no-repeat;
+			vertical-align: middle;
+			}
+
 /* =================================
 PAGE SETUP
 ===================================*/

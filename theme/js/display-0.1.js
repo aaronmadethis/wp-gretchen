@@ -26,6 +26,13 @@ jQuery(document).ready(function($) {
 
 
 	/* ---------------------------------------------------------------------------------------
+	HOME CLICK THROUGH
+	--------------------------------------------------------------------------------------- */
+	$('#stage-wrapper').click(function(e){
+		$('#stage-wrapper').fadeOut(500);
+	});
+
+	/* ---------------------------------------------------------------------------------------
 	PROJECT IMAGES
 	--------------------------------------------------------------------------------------- */
 	$('#lrg-image-container li').first().addClass('first');
@@ -87,25 +94,34 @@ jQuery(document).ready(function($) {
 	});
 
 	function set_img_ratios(){
-		
-		$('#lrg-image-container li').each(function(i) {
-			var img = $(this).find('img'),
-				win_r = win_w / win_h,
-				img_w = $(img).attr('data-width'),
-				img_h = $(img).attr('data-height'),
-				img_r = img_w / img_h;
+		if( $('#lrg-image-container').length > 0 ){
+			$('#lrg-image-container li').each(function(i) {
+				var img = $(this).find('img');
+				set_ratio(img);
+			});
+		}
+		if( $('#home-wrapper').length > 0 ){
+			set_ratio( $('#home-wrapper img') );
+		}
+	}
 
-			if(win_r > img_r){
-				//window is wide
-				$(img).removeClass('vert').addClass('horz');
-			}else{
-				//window is high
-				$(img).removeClass('horz').addClass('vert');
-			}
-		});
+	function set_ratio(img){
+			win_r = win_w / win_h,
+			img_w = $(img).attr('data-width'),
+			img_h = $(img).attr('data-height'),
+			img_r = img_w / img_h;
+
+		if(win_r > img_r){
+			//window is wide
+			$(img).removeClass('vert').addClass('horz');
+		}else{
+			//window is high
+			$(img).removeClass('horz').addClass('vert');
+		}
 	}
 
 	set_img_ratios();
+
 
 	/* ---------------------------------------------------------------------------------------
 	THUMBNAILS
@@ -118,10 +134,10 @@ jQuery(document).ready(function($) {
 
 	$('#thumb-btn-show a').click(function(e){
 		e.preventDefault();
-		$('#thumb-wrapper').removeClass('closed').addClass('opened');
 		$('#thumb-image-container').removeClass('closed').addClass('opened');
 		$('#thumb-btn-show').animate({opacity: 0},200, function(){
 			$(this).css({'visibility': 'hidden'});
+			$('#thumb-wrapper').removeClass('closed').addClass('opened');
 		});
 		$('#thumb-btn-controls').fadeIn('fast', function(){ 
 			$(this).animate({opacity: 1},200);

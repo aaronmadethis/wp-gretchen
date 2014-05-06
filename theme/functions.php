@@ -123,8 +123,8 @@ function my_script_enqueuer() {
 	$bootstrap_url = get_bloginfo('template_directory') . '/js/bootstrap.min.js';
 	wp_enqueue_script('bootstrap', $bootstrap_url, array('jquery', 'modernizr'), '', true);
 
-	// $slick_url = get_bloginfo('template_directory') . '/js/jquery.slicknav.min.js';
-	// wp_enqueue_script('slick', $slick_url, array('jquery', 'modernizr'), '', true);
+	$slick_url = get_bloginfo('template_directory') . '/js/jquery.slicknav.min.js';
+	wp_enqueue_script('slick', $slick_url, array('jquery', 'modernizr'), '', true);
 
 	$display_script_url = get_bloginfo('template_directory') . '/js/display-0.1.js';
 	$plugins = get_bloginfo('template_directory') . '/js/plugins-0.1.js';

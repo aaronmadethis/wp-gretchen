@@ -44,9 +44,22 @@ jQuery(document).ready(function($) {
 	$('#lrg-image-container li').first().addClass('first');
 	$('#thumb-image-container li').first().addClass('first selected');
 
-	imagesLoaded( '#lrg-image-container li.first', function() {
-		$('#lrg-image-container li.first').addClass('selected').css({'visibility': 'visible'}).stop(true, true).animate({opacity: 1},200);
+	var loader_url = '<div id="temp-load" class="myinvisible"><img src="http://gretchensmelter.com/web/wp-content/themes/gretchensmelter/images/loader_icon.png" title="preloader image"></div>';
+	$('body').prepend( loader_url );
+
+	imagesLoaded( '#temp-load', function(){
+		$('#temp-load').remove();
+		setTimeout(load_first_img, 1000)
 	});
+
+
+	function load_first_img(){
+		imagesLoaded( '#lrg-image-container li.first', function() {
+			$('#loader').addClass('myhide');
+			$('#lrg-image-container li.first').addClass('selected').css({'visibility': 'visible'}).stop(true, true).delay(200).animate({opacity: 1},500);
+		});
+	}
+
 
 	function change_image(img_index){
 		var current = $('#lrg-image-container li.selected').index();

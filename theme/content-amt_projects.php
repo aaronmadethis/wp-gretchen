@@ -39,6 +39,8 @@
 
 								<a id="mobile-next" href="#"></a>
 
+								<div id="loader" class="preloader_png transition-2"></div>
+
 								<ul id="lrg-images">
 									<?php $loop_counter = 1; ?>
 

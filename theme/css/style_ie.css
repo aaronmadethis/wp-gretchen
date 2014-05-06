@@ -1,0 +1,16 @@
+body{
+	overflow: hidden;
+	}
+#logo{
+	max-height: 90px;
+	}
+	#logo svg{
+		max-height: 71px;
+		}
+
+#nav-wrapper nav{
+	padding-top: 2.6em;
+	}
+#nav-wrapper #page-title{
+	margin-top: 2.6em;
+	}

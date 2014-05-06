@@ -191,11 +191,11 @@ jQuery(document).ready(function($) {
 	--------------------------------------------------------------------------------------- */
 	$('#thumb-btn-controls a.prev').click(function(e){
 		e.preventDefault();
-		$('#thumb-wrapper').scrollTo('-=608px', 500);
+		$('#thumb-wrapper').scrollTo('-=608px', 500, {axis: 'x'});
 	});
 	$('#thumb-btn-controls a.next').click(function(e){
 		e.preventDefault();
-		$('#thumb-wrapper').scrollTo('+=608px', 500);
+		$('#thumb-wrapper').scrollTo('+=608px', 500, {axis: 'x'});
 	});
 
 

@@ -135,7 +135,7 @@ function my_script_enqueuer() {
 	wp_enqueue_style( 'slicknav', get_template_directory_uri() . '/css/slicknav.css' );
 
 	if( is_front_page() ){
-		$edge_animate = get_bloginfo('template_directory') . '/js/animation/GSD_HomeIntroAnimation_042414_ap2_edgePreload.js';
+		$edge_animate = get_bloginfo('template_directory') . '/js/animation/GSD_HomeIntroAnimation_043014_ap1_edgePreload.js';
 		wp_enqueue_script('edge', $edge_animate, array('jquery', 'modernizr'), '', true);
 	}
 }

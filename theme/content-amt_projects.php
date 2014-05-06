@@ -37,6 +37,8 @@
 									</div>
 								</a>
 
+								<a id="mobile-next" href="#"></a>
+
 								<ul id="lrg-images">
 									<?php $loop_counter = 1; ?>
 

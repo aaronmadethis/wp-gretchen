@@ -5,7 +5,7 @@
 ?>
 
 <section id="nav-wrapper">
-	<div id="nav-container" class="clearfix">
+	<div id="nav-container" class="clearfix tall transition-2">
 		
 		<div id="logo" >
 			<a href="<?php echo home_url(); ?>" alt="Gretchen Smelter Portfolio Home Link">
@@ -106,11 +106,13 @@
 		
 		<nav>
 			<?php wp_nav_menu( array( 'theme_location' => 'main', 'depth' => 2, 'container' => false ) ); ?>
+
+			<?php if( get_post_type( $post->ID ) == 'amt_projects') : ?>
+				<div id="page-title"><?php echo $post->post_title; ?></div>
+			<?php endif; /*is_home*/ ?>
+			
 		</nav>
 
-		<?php if( get_post_type( $post->ID ) == 'amt_projects') : ?>
-			<div id="page-title"><?php echo $post->post_title; ?></div>
-		<?php endif; /*is_home*/ ?>
 
 	</div>
 </section>

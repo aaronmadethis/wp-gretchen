@@ -76,11 +76,11 @@ jQuery(document).ready(function($) {
 			
 			if(current > img_index){
 				var scroll_pos = (Math.floor(img_index / 8) * 608);
-				$('#thumb-wrapper').scrollTo( scroll_pos, 500, {onAfter: function(){} });
+				$('#thumb-wrapper').scrollTo( scroll_pos, 500, {axis: 'x'});
 				console.log(current, img_index, scroll_pos);
 			}else{
 				var scroll_pos  = Math.floor(img_index / 4) * 304;
-				$('#thumb-wrapper').scrollTo( scroll_pos, 500, {onAfter: function(){} });
+				$('#thumb-wrapper').scrollTo( scroll_pos, 500, {axis: 'x'});
 				console.log(current, img_index, scroll_pos);
 			}
 		}

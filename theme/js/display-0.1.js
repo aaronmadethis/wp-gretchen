@@ -112,6 +112,20 @@ jQuery(document).ready(function($) {
 		e.preventDefault();
 	});
 
+	$('#mobile-next').click(function(e){
+		var img_index = $('#lrg-image-container li.selected').index();
+
+		if(img_index == $('#lrg-image-container li').length - 1 ){
+			img_index = 0
+		}else{
+			++img_index;
+		}
+
+		change_image(img_index);
+		e.preventDefault();
+	});
+
+
 	function set_img_ratios(){
 		if( $('#lrg-image-container').length > 0 ){
 			$('#lrg-image-container li').each(function(i) {

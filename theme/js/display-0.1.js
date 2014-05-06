@@ -15,6 +15,12 @@ jQuery(document).ready(function($) {
 		is_horizontal = false;
 		
 		if(win_ratio < 1) is_horizontal = true;
+
+		if(win_h <= 600){
+			$('#nav-container').removeClass('tall').addClass('short');
+		}else{
+			$('#nav-container').removeClass('short').addClass('tall');
+		}
 	}
 	set_window_ratio();
 

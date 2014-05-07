@@ -68,7 +68,8 @@
 											<li class="thumb">
 												<a href="">
 													<div>
-														<span class="transition-2"></span><img class="transition-2" src="<?php echo $image['sizes']['portfolio-thumb']; ?>" >
+														<?php $size = wp_get_attachment_image_src($image['id'], 'portfolio-thumb'); ?>
+														<span class="transition-2" style="width:<?php echo $size[1]; ?>px; height: <?php echo $size[2]; ?>px;"></span><img class="transition-2 horz" src="<?php echo $image['sizes']['portfolio-thumb']; ?>" data-width="<?php echo $size[1]; ?>" data-height="<?php echo $size[2]; ?>">
 													</div>
 												</a>
 											</li>

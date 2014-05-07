@@ -148,7 +148,7 @@ jQuery(document).ready(function($) {
 	}
 
 	function set_ratio(img){
-			win_r = win_w / win_h,
+		var	win_r = win_w / win_h,
 			img_w = $(img).attr('data-width'),
 			img_h = $(img).attr('data-height'),
 			img_r = img_w / img_h;

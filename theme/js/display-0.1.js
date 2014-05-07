@@ -133,6 +133,15 @@ jQuery(document).ready(function($) {
 				set_ratio(img);
 			});
 		}
+		if( $('#thumb-images').length > 0 ){
+			$('#thumb-images li').each(function(i) {
+				var img = $(this).find('img'),
+					img_w = $(img).attr('data-width'),
+					img_h = $(img).attr('data-height');
+				if (img_h > img_w) { $(img).removeClass('horz').addClass('vert'); }else{ $(img).removeClass('vert').addClass('horz'); };
+
+			});
+		}
 		if( $('#home-wrapper').length > 0 ){
 			set_ratio( $('#home-wrapper img') );
 		}
